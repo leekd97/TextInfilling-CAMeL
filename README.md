@@ -18,7 +18,6 @@ TextInfilling/
 Install the core dependencies:
 
 ```bash
-cd /home/leekd97/experiments/TextInfilling
 pip install -r requirements.txt
 ```
 
@@ -44,7 +43,7 @@ Do not commit `ours/configs/user_configs.yaml`; it is ignored because it contain
 The shell script runs text infilling, CBS analysis, and per-model figures.
 
 ```bash
-cd /home/leekd97/experiments/TextInfilling/ours/src
+cd /TextInfilling/ours/src
 PROMPT_CULTURES="co ag" ./text_infilling.sh
 ```
 
@@ -70,7 +69,7 @@ GPU_IDS="2 3" BATCH_SIZE=16 PROMPT_CULTURES="co ag" ./text_infilling.sh
 ### 1. Text Infilling
 
 ```bash
-cd /home/leekd97/experiments/TextInfilling/ours/src
+cd /TextInfilling/ours/src
 CUDA_VISIBLE_DEVICES=2 python3 text_infilling.py \
   --model_name LLAMA-3.1-8B \
   --prompt_culture co \
@@ -91,7 +90,7 @@ ours/results/text_infilling/{MODEL}_{co|ag}_ar_50_50.json
 ### 2. Analysis
 
 ```bash
-cd /home/leekd97/experiments/TextInfilling/ours/results/text_infilling
+cd /TextInfilling/ours/results/text_infilling
 python3 evaluate.py \
   --model_name LLAMA-3.1-8B \
   --prompt_culture co \
@@ -113,7 +112,7 @@ analysis/{MODEL}_{co|ag}_ar_50_50.png
 After both `co` and `ag` CBS files exist:
 
 ```bash
-cd /home/leekd97/experiments/TextInfilling/ours/results/text_infilling
+cd /TextInfilling/ours/results/text_infilling
 python3 figure.py
 ```
 
