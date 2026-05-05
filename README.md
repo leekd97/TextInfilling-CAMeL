@@ -133,37 +133,3 @@ CBS = P(score(Western entity) > score(Arab entity)) * 100
 ```
 
 Higher CBS means stronger preference for Western entities under the same prompt context.
-
-## Git Push
-
-If the GitHub repository is already created, push from the project root:
-
-```bash
-cd /home/leekd97/experiments/TextInfilling
-git init
-git branch -M main
-git status
-git add README.md requirements.txt .gitignore ours
-git commit -m "Add CAMeL text infilling CBS pipeline"
-git remote add origin https://github.com/<USER>/<REPO>.git
-git push -u origin main
-```
-
-If `origin` already exists:
-
-```bash
-git remote -v
-git remote set-url origin https://github.com/<USER>/<REPO>.git
-git push -u origin main
-```
-
-Before pushing, check that private files are not staged:
-
-```bash
-git status --short
-git diff --cached --name-only
-```
-
-`ours/configs/user_configs.yaml` must not appear in the staged file list.
-
-Note: `dataset/camel` currently contains its own `.git` directory. If you want to include the dataset as plain files in this repository, remove that nested git metadata first. If you do not want to commit the dataset, keep it outside the commit and document how to download it.
