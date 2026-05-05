@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Generated experiment outputs
+ours/results/text_infilling/*.json
+ours/results/text_infilling/analysis/*.json
+ours/results/text_infilling/analysis/*.png
+ours/results/text_infilling/analysis/co_ag/
+
+# Local caches and checkpoints
+.cache/
+checkpoints/
+outputs/
+wandb/

@@ -1,0 +1,210 @@
+#TODO: model config / ds config 분리
+LLAMA-3.3-70B-Instruct:
+  full_name: "meta-llama/Llama-3.3-70B-Instruct"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+LLAMA-3.1-8B-Instruct:
+  full_name: "meta-llama/Llama-3.1-8B-Instruct"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+LLAMA-3.1-8B:
+  full_name: "meta-llama/Llama-3.1-8B"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+KOLLAMA-3.1-8B:
+  full_name: "AIDX-ktds/ktdsbaseLM-v0.14-onbased-llama3.1"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+XLMR-Large:
+  full_name: "FacebookAI/xlm-roberta-large"
+  model_type: "encoder"
+  torch_dtype: "float32"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 8
+    train_micro_batch_size_per_gpu: 8
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: False
+GEMMA-3-12B-IT:
+  full_name: "google/gemma-3-12b-it"
+  model_type: "decoder"
+  torch_dtype: "bfloat16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+SOLAR-10.7B-Instruct:
+  full_name: "Upstage/SOLAR-10.7B-Instruct-v1.0"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+SOLAR-10.7B-v1.0:
+  full_name: "Upstage/SOLAR-10.7B-v1.0"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+EXAONE-3.5-7.8B-Instruct:
+  full_name: "LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct-AWQ"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+EXAONE-Deep-7.8B-AWQ:
+  full_name: "LGAI-EXAONE/EXAONE-Deep-7.8B-AWQ"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True
+Trillion-7B-preview:
+  full_name: "trillionlabs/Trillion-7B-preview"
+  model_type: "decoder"
+  torch_dtype: "float16"
+  device_map: "auto"
+  ds_config:
+    train_batch_size: 1
+    train_micro_batch_size_per_gpu: 1
+    gradient_accumulation_steps: 1
+    zero_optimization: 
+      stage: 3
+      offload_optimizer:
+        device: "cpu"
+      offload_param: 
+        device: "cpu"
+      overlap_comm: True
+      contiguous_gradients: True
+    fp16:
+      enabled: True

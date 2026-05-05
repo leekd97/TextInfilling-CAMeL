@@ -1,0 +1,21 @@
+ExtractiveQA: |-
+  Extract the ${entity_type} menthioned in the following ${language} text:
+
+  Text: ${QA_prompt}
+
+  Reply only with the name of the ${entity_type} mentioned.
+LLAMA-3.1-8B-Instruct: |-
+  <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+  
+  Cutting Knowledge Date: December 2023
+  Today Date: 26 Jul 2024
+  
+  You are a helpful assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>
+  
+  ${user_prompt}<|eot_id|>
+
+GEMMA-3-12B-IT: |-
+  <start_of_turn>user
+  You are a helpful assistant.
+  
+  ${user_prompt}
